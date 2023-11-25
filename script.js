@@ -1,12 +1,11 @@
-function join(valOne, valTwo) {
-    if (typeof valOne === "number" && typeof valTwo === "number") {
-        return valOne + valTwo;
-    }
-    else if (typeof valOne === "string" && typeof valTwo === "string") {
-        return valOne.toString() + valTwo.toString();
-    }
-    return false;
+var permissions = {
+    admin: "rwx",
+    moderator: "rw",
+    user: "r",
+};
+function renderRoleDesc(permissions) {
+    console.log("Role description: ".concat(permissions));
 }
-var one = join("John", "Doe"); // should return JohnDoe
-var two = join(5, 6); // should return 11
-var three = join(5, "5"); // should return false
+function checkRolePermissions(role) {
+    renderRoleDesc(permissions[role]);
+}
