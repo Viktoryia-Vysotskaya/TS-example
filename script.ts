@@ -1,13 +1,28 @@
-const permissions = {
-  admin: "rwx",
-  moderator: "rw",
-  user: "r",
+function showMyName(name: string): void {
+  console.log(name);
+}
+
+showMyName("John");
+
+function square(a: number): number {
+  return a * a;
+}
+
+square(10);
+
+function sum(title: string, ...numbers: number[]): string {
+  return title + " = " + numbers.reduce((sum, num) => sum + num, 0);
+}
+
+sum("Numbers", 1, 6, 10);
+
+const executeFunc = (
+  func: (title: string, age: number, hobbies: string[]) => boolean
+): void => {
+  const title = "Lorem Ipsum";
+  func(title, 24, ["Sport", "Movies"]);
 };
 
-function renderRoleDesc(permissions: string) {
-  console.log(`Role description: ${permissions}`);
-}
-
-function checkRolePermissions(role: "admin" | "moderator" | "user") {
-  renderRoleDesc(permissions[role]);
-}
+executeFunc((title: string, age: number, hobbies: string[]): boolean => {
+  return true;
+});
