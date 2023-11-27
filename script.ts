@@ -1,12 +1,21 @@
-type fooType = string | number | boolean;
-let foo: fooType;
-foo = "bar";
-foo = 12;
-foo = false;
+type Person = {
+  firstName: string;
+  lastName: string;
+  age: number;
+};
 
-const bar = 12;
+const per: Person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 25,
+};
 
-type bazType = string | number | boolean;
-function baz(param: string): bazType {
-  return param;
+type paramType = "firstName" | "lastName" | "age";
+type paramReturnType = string | number;
+
+function showParam(param: paramType): paramReturnType {
+  return per[param];
 }
+
+let age: number = <number>showParam("age");
+let firstName: string = <string>showParam("firstName");
