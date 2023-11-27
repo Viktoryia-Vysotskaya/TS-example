@@ -1,23 +1,17 @@
-interface Player {
-  name: string;
-  score: number | null;
-  inGame: boolean;
+interface DataFunc {
+  (data: DataArray): void;
 }
 
-const JohnDoe: Player = {
-  name: "JohnDoeey",
-  score: 25,
-  inGame: true,
+interface DataArray {
+  [index: number]: string | number;
+}
+
+const showData: DataFunc = function (data: DataArray): void {
+  console.log(data);
 };
 
-const KatieDownson: Player = {
-  name: "Kate98",
-  score: 24,
-  inGame: true,
-};
+const numbers: DataArray = [1, 2, 3];
+const numbersAndString: DataArray = ["John", 4, "Amanda"];
 
-const ThomasBanes: Player = {
-  name: "Kate98",
-  score: null,
-  inGame: false,
-};
+showData(numbers);
+showData(numbersAndString);
