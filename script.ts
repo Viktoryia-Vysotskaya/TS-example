@@ -1,28 +1,12 @@
-function showMyName(name: string): void {
-  console.log(name);
+type fooType = string | number | boolean;
+let foo: fooType;
+foo = "bar";
+foo = 12;
+foo = false;
+
+const bar = 12;
+
+type bazType = string | number | boolean;
+function baz(param: string): bazType {
+  return param;
 }
-
-showMyName("John");
-
-function square(a: number): number {
-  return a * a;
-}
-
-square(10);
-
-function sum(title: string, ...numbers: number[]): string {
-  return title + " = " + numbers.reduce((sum, num) => sum + num, 0);
-}
-
-sum("Numbers", 1, 6, 10);
-
-const executeFunc = (
-  func: (title: string, age: number, hobbies: string[]) => boolean
-): void => {
-  const title = "Lorem Ipsum";
-  func(title, 24, ["Sport", "Movies"]);
-};
-
-executeFunc((title: string, age: number, hobbies: string[]): boolean => {
-  return true;
-});
