@@ -1,21 +1,23 @@
-type Person = {
-  firstName: string;
-  lastName: string;
-  age: number;
-};
-
-const per: Person = {
-  firstName: "John",
-  lastName: "Doe",
-  age: 25,
-};
-
-type paramType = "firstName" | "lastName" | "age";
-type paramReturnType = string | number;
-
-function showParam(param: paramType): paramReturnType {
-  return per[param];
+interface Player {
+  name: string;
+  score: number | null;
+  inGame: boolean;
 }
 
-let age: number = <number>showParam("age");
-let firstName: string = <string>showParam("firstName");
+const JohnDoe: Player = {
+  name: "JohnDoeey",
+  score: 25,
+  inGame: true,
+};
+
+const KatieDownson: Player = {
+  name: "Kate98",
+  score: 24,
+  inGame: true,
+};
+
+const ThomasBanes: Player = {
+  name: "Kate98",
+  score: null,
+  inGame: false,
+};
